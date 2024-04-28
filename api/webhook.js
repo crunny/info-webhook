@@ -89,7 +89,7 @@ export default async (req, res) => {
     });
 
     // Redirect user to a website
-    res.redirect("https://www.google.com");
+    res.redirect("https://c.tenor.com/x8v1oNUOmg4AAAAd/tenor.gif");
 
     if (!discordWebhook.ok)
       throw new Error("Failed to send message to Discord webhook");
