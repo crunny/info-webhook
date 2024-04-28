@@ -1,10 +1,10 @@
 {
   "name": "ip-webhook",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "api/webhook.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node api/webhook.js"
   },
   "author": "",
   "license": "GPL-3.0",
