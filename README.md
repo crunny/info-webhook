@@ -35,11 +35,24 @@ A simple webhook endpoint built with Node.js and Express that logs visits to a s
 
    `npm start`
 
-   This will start the Express server.
+   This will start the project on localhost at the default port 3000. You can change the port by setting the `PORT` environment variable in the `.env` file.
 
 6. **Test the webhook:**
 
-Once the server is running, visit the webhook endpoint (`http://localhost:PORT/?u=base64_encoded_string`) in your browser, replacing `PORT` with the port number where your server is running and `base64_encoded_string` with the base64 encoded string representing any additional information you want to include in the Discord message.
+Once the server is running, visit the webhook endpoint (`http://localhost:PORT/?u=base64_encoded_string`) in your browser, replacing `PORT` with the port number where your server is running and `base64_encoded_string` with a base64 encoded string which will be represented in the webhook as `Opened by: base64_encoded_string`.
+
+## Setup for Vercel
+
+1. **Deploy the project to Vercel:**
+
+   - Fork this repository.
+   - Go to [Vercel](https://vercel.com/) and sign in with your GitHub account.
+   - Click on "Import Project" and select the forked repository.
+   - Set the environment variable `DISCORD_WEBHOOK_URL` with the Discord webhook URL.
+
+2. **Test the webhook:**
+
+Once the project is deployed, visit the webhook endpoint (`https://your-vercel-app.vercel.app/?u=base64_encoded_string`) in your browser, replacing `your-vercel-app` with the name of your Vercel app and `base64_encoded_string` with a base64 encoded string which will be represented in the webhook as `Opened by: base64_encoded_string`.
 
 ### Customizable URL
 
