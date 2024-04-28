@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Define the route for your webhook endpoint
-app.get("/api/webhook", webhookHandler);
+app.get("/", webhookHandler);
 
 // Start the server
 app.listen(PORT, () => {

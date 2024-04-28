@@ -39,7 +39,7 @@ A simple webhook endpoint built with Node.js and Express that logs visits to a s
 
 6. **Test the webhook:**
 
-Once the server is running, visit the webhook endpoint (`http://localhost:PORT/api/webhook?u=base64_encoded_string`) in your browser, replacing `PORT` with the port number where your server is running and `base64_encoded_string` with a base64 encoded string which will be represented in the webhook as `Opened by: base64_encoded_string`.
+Once the server is running, visit the webhook endpoint (`http://localhost:PORT?u=base64_encoded_string`) in your browser, replacing `PORT` with the port number where your server is running and `base64_encoded_string` with a base64 encoded string which will be represented in the webhook as `Opened by: base64_encoded_string`.
 
 ## Setup for Vercel
 
@@ -52,13 +52,13 @@ Once the server is running, visit the webhook endpoint (`http://localhost:PORT/a
 
 2. **Test the webhook:**
 
-Once the project is deployed, visit the webhook endpoint (`https://your-vercel-app.vercel.app/api/webhook?u=base64_encoded_string`) in your browser, replacing `your-vercel-app` with the name of your Vercel app and `base64_encoded_string` with a base64 encoded string which will be represented in the webhook as `Opened by: base64_encoded_string`.
+Once the project is deployed, visit the webhook endpoint (`https://your-vercel-app.vercel.app?u=base64_encoded_string`) in your browser, replacing `your-vercel-app` with the name of your Vercel app and `base64_encoded_string` with a base64 encoded string which will be represented in the webhook as `Opened by: base64_encoded_string`.
 
 ### Customizable URL
 
 You must include a base64-encoded string as a query parameter `u` at the end of the URL to customize the behaviour of the webhook. This encoded string will be decoded and used to indicate who opened the URL in the Discord webhook message. For example:
 
-`https://your.site/api/webhook?u=dGVzdF91c2Vy`
+`https://your.site?u=dGVzdF91c2Vy`
 
 In this example, the base64-encoded string `dGVzdF91c2Vy` represents the text "test_user" when decoded.
 The Discord webhook message will include a section indicating that the URL was opened by "test_user".
