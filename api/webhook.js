@@ -21,7 +21,22 @@ export default async (req, res) => {
       req.headers["x-real-ip"] ||
       req.connection.remoteAddress;
 
+    const fetchLocation = async () => {
+      const response = await fetch(`https://ipinfo.io/${ipAddress}/json`);
+      const data = await response.json();
+      return data.city
+        ? `${data.city}, ${data.region}, ${data.country}`
+        : "Unknown";
+    };
+
+    const location = await fetchLocation();
+
     const userAgent = req.headers["user-agent"] || "Unknown";
+
+    const screenSize =
+      req.headers["viewport-width"] && req.headers["viewport-height"]
+        ? `${req.headers["viewport-width"]}x${req.headers["viewport-height"]}`
+        : "Unknown";
 
     const openedBy = decodedData
       ? `Opened by: ${decodedData}`
@@ -48,8 +63,18 @@ export default async (req, res) => {
                 inline: true,
               },
               {
+                name: "Estimated Location",
+                value: location || "Unknown",
+                inline: true,
+              },
+              {
                 name: "User-Agent",
                 value: userAgent || "Unknown",
+                inline: true,
+              },
+              {
+                name: "Screen Size",
+                value: screenSize || "Unknown",
                 inline: true,
               },
             ],
