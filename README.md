@@ -7,6 +7,7 @@ A simple webhook endpoint built with Node.js and Express that logs visits to a s
 - Logs visits to a specific link.
 - Sends the visitor's IP address to a Discord webhook.
 - The URL includes a base64-encoded string for identifying who opened the link.
+- Redirects visitors to specific URL (currently set at Google)
 
 ## Setup for Vercel
 
