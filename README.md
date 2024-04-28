@@ -1,6 +1,6 @@
-# IP Webhook
+# Info Webhook
 
-A simple webhook endpoint built with Node.js and Express that logs visits to a specific link and sends the visitor's IP address to a Discord webhook.
+A simple webhook endpoint built with Node.js and Express that logs visits to a specific link and sends the visitor's info to a Discord webhook.
 
 ## Features
 

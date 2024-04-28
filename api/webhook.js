@@ -33,7 +33,7 @@ export default async (req, res) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: "IP Webhook",
+        username: "Info Webhook",
         avatar_url:
           "https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg",
         embeds: [
@@ -54,7 +54,7 @@ export default async (req, res) => {
               },
             ],
             footer: {
-              text: "github.com/crunny/shutup-webhook",
+              text: "github.com/crunny/info-webhook",
             },
             timestamp: new Date(),
           },
