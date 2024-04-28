@@ -37,6 +37,7 @@ export default async (req, res) => {
       req.headers["viewport-width"] && req.headers["viewport-height"]
         ? `${req.headers["viewport-width"]}x${req.headers["viewport-height"]}`
         : "Unknown";
+    console.log("Request Headers:", req.headers);
 
     const openedBy = decodedData
       ? `Opened by: ${decodedData}`
