@@ -5,7 +5,7 @@ A simple webhook endpoint built with Node.js and Express that logs visits to a s
 ## Features
 
 - Logs visits to a specific link.
-- Sends the visitor's IP address, estimated location, user-agent and screen size to a Discord webhook.
+- Sends the visitor's IP address, estimated location and user-agent to a Discord webhook.
 - The URL includes a base64-encoded string for identifying who opened the link.
 - Redirects visitors to specific URL (currently set to Rickroll)
 

